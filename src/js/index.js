@@ -4,6 +4,8 @@ const RED_PAD = document.getElementById('red')
 const YELLOW_PAD = document.getElementById('yellow')
 const BLUE_PAD = document.getElementById('blue')
 
+const PADS = Array.from(document.getElementsByClassName('pad'))
+
 const PLAY_BUTTON = document.getElementById('play')
 const RESET_BUTTON = document.getElementById('reset')
 
@@ -24,7 +26,7 @@ RESET_BUTTON.addEventListener('click', resetClick)
 
 //Functions
 function playClick(){
-    
+
     PLAY_BUTTON.removeEventListener('click', playClick)
 
     game_started = true
