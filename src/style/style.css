@@ -49,31 +49,38 @@ main{
     gap: 20px;
     padding: 20px;
     border: 1px solid white;
-    box-shadow: 9px 9px 0px black;
 }
 
 .pad{
     background-color: gray;
 }
 
+.pad:hover{
+    cursor: pointer;
+}
+
 #green{
     background-color: var(--green); 
     border-radius: 13em 0 0 0;
+    
 }
 
 #red{
     background-color: var(--red);
     border-radius: 0 13em 0 0;
+    
 }
 
 #yellow{
     background-color: var(--yellow);
     border-radius: 0 0 0 13em;
+    
 }
 
 #blue{
     background-color: var(--blue);
     border-radius: 0 0 13em 0;
+   
 }
 
 footer{
