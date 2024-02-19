@@ -10,6 +10,9 @@ const RESET_BUTTON = document.getElementById('reset')
 
 //Color Constants
 const LIGHT_RED = "rgb(255, 150, 150)"
+const LIGHT_GREEN = "lightgreen"
+const LIGHT_BLUE = "lightblue"
+const LIGHT_YELLOW = "lightyellow"
 
 //Variables
 let game_started = false
@@ -24,6 +27,23 @@ function playClick(){
     game_started = true
     
     startVisualChanges()
+
+    let random = Math.floor(Math.random()* 4 + 1)
+
+    switch(random){
+        case 1:
+            GREEN_PAD.style.backgroundColor = LIGHT_GREEN;
+            break;
+        case 2:
+            RED_PAD.style.backgroundColor = LIGHT_RED;
+            break;
+        case 2:
+            YELLOW_PAD.style.backgroundColor = LIGHT_YELLOW;
+            break;
+        case 4:
+            BLUE_PAD.style.backgroundColor = LIGHT_BLUE;
+            break;    
+    }
 
 }
 
