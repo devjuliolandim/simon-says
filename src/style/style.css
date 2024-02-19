@@ -49,6 +49,11 @@ main{
     gap: 20px;
     padding: 20px;
     border: 1px solid white;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .pad{
@@ -83,6 +88,29 @@ main{
    
 }
 
+
+div#score{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: black;
+    width: 200px;
+    height: 200px;
+
+    border-radius: 50%;
+
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    font-size: 2em;
+}
+
+
+
 footer{
     text-align: center;
 }
@@ -108,11 +136,18 @@ button{
     transition: .5s;
 }
 
-button:hover{
+button.hover:hover{
     transition: .5s;
     color: black;
     background-color: white;
     
     border: 2px solid black;
 }
+
+#reset{
+    background-color: rgba(0, 0, 0, 0.047);
+    color: rgba(0, 0, 0, 1.0);
+}
+
+
 
