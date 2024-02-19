@@ -31,6 +31,23 @@ header{
     font-size: 1.2em;
 }
 
+#green-letter{
+    color: green;
+}
+
+#red-letter{
+    color: red;
+}
+
+#yellow-letter{
+    color: yellow;
+}
+
+#blue-letter{
+    color: blue;
+}
+
+
 main{
     display: flex;
     justify-content: center;
@@ -77,26 +94,39 @@ main{
 
 #green{
     background-color: var(--green); 
-    border-radius: 13em 0 0 0;
-    
+    border-radius: 13em 0 0 0; 
+}
+
+#green:hover{
+    background-color: rgb(0, 91, 0);
 }
 
 #red{
     background-color: var(--red);
     border-radius: 0 13em 0 0;
-    
+}
+
+#red:hover{
+    background-color: rgb(156, 0, 0);
 }
 
 #yellow{
     background-color: var(--yellow);
     border-radius: 0 0 0 13em;
-    
+}
+
+#yellow:hover{
+    background-color: rgb(166, 166, 0);
 }
 
 #blue{
     background-color: var(--blue);
     border-radius: 0 0 13em 0;
    
+}
+
+#blue:hover{
+    background-color: rgb(0, 0, 162);
 }
 
 

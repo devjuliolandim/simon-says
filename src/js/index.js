@@ -4,11 +4,11 @@ const RED_PAD = document.getElementById('red')
 const YELLOW_PAD = document.getElementById('yellow')
 const BLUE_PAD = document.getElementById('blue')
 
-const PADS = Array.from(document.getElementsByClassName('pad'))
+const PADS = [GREEN_PAD, RED_PAD, YELLOW_PAD, BLUE_PAD]
 
+//Buttons
 const PLAY_BUTTON = document.getElementById('play')
 const RESET_BUTTON = document.getElementById('reset')
-
 
 //Color Constants
 const LIGHT_RED = "rgb(255, 150, 150)"
@@ -62,26 +62,27 @@ function resetClick(){
 function startVisualChanges(){
     PLAY_BUTTON.style.color = "black"
     PLAY_BUTTON.style.backgroundColor = "rgba(0, 0, 0, 0.047)"
-    PLAY_BUTTON.classList.remove('hover')
+    
 
     RESET_BUTTON.style.backgroundColor = "black"
     RESET_BUTTON.style.color = "white"
-    RESET_BUTTON.classList.add('hover')
+    
 }
 
 function resetVisualChanges(){
     PLAY_BUTTON.style.color = "white"
     PLAY_BUTTON.style.backgroundColor = "black"
-    PLAY_BUTTON.classList.add('hover')
+    
 
     RESET_BUTTON.style.backgroundColor = "rgba(0, 0, 0, 0.047)"
     RESET_BUTTON.style.color = "black"
-    RESET_BUTTON.classList.remove('hover')
 
-    GREEN_PAD.style.backgroundColor = "green"
-    RED_PAD.style.backgroundColor = "red"
-    YELLOW_PAD.style.backgroundColor = "yellow"
-    BLUE_PAD.style.backgroundColor = "blue"
+
+    GREEN_PAD.style.backgroundColor = "var(--green)"
+    RED_PAD.style.backgroundColor = "var(--red)"
+    YELLOW_PAD.style.backgroundColor = "var(--yellow)"
+    BLUE_PAD.style.backgroundColor = "var(--blue)"
+
 }
 
 function changePadColor(color){
@@ -117,3 +118,4 @@ function changePadColor(color){
 
 
 }
+
