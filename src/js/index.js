@@ -23,6 +23,31 @@ let random = 0
 //EventListener
 PLAY_BUTTON.addEventListener('click', playClick)
 RESET_BUTTON.addEventListener('click', resetClick)
+PADS.forEach((pad,index) =>{
+    pad.addEventListener("mouseover", ()=>{
+        if(index === 0){
+            pad.style.backgroundColor = "darkgreen"
+        }else if(index === 1){
+            pad.style.backgroundColor = "darkred"
+        }else if(index === 2){
+            pad.style.backgroundColor = "rgb(195, 195, 0)"
+        }else if(index === 3){
+            pad.style.backgroundColor = "darkblue"
+        }
+    })
+
+    pad.addEventListener("mouseleave", ()=>{
+        if(index === 0){
+            pad.style.backgroundColor = "green"
+        }else if(index === 1){
+            pad.style.backgroundColor = "red"
+        }else if(index === 2){
+            pad.style.backgroundColor = "yellow"
+        }else if(index === 3){
+            pad.style.backgroundColor = "blue"
+        }
+    })
+})
 
 //Functions
 function playClick(){
@@ -45,7 +70,6 @@ function playClick(){
         changePadColor("blue")
     }
 }
-
 
 function resetClick(){
     if(game_started == false){
@@ -119,3 +143,6 @@ function changePadColor(color){
 
 }
 
+function mouseOver(){
+
+}
