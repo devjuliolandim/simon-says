@@ -142,7 +142,3 @@ function changePadColor(color){
 
 
 }
-
-function mouseOver(){
-
-}
