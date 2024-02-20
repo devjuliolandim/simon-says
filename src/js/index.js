@@ -72,15 +72,7 @@ function playClick(){
         changePadColor("blue")
     }
 
-    PADS.forEach((pad,index) =>{
-        pad.addEventListener("click", ()=>{
-            if((index+1) === random){
-                alert("RIGHT!")
-            }else{
-                alert("WRONG")
-            }
-        })
-    })
+    verifyClick()
 
 }
 
@@ -154,4 +146,16 @@ function changePadColor(color){
     }
 
 
+}
+
+function verifyClick(){
+    PADS.forEach((pad,index) =>{
+        pad.addEventListener("click", ()=>{
+            if((index+1) === random){
+                alert("RIGHT!")
+            }else{
+                alert("WRONG")
+            }
+        })
+    })
 }
