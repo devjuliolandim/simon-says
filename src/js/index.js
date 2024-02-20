@@ -3,10 +3,9 @@ const GREEN_PAD = document.getElementById('green')
 const RED_PAD = document.getElementById('red')
 const YELLOW_PAD = document.getElementById('yellow')
 const BLUE_PAD = document.getElementById('blue')
-
 const PADS = [GREEN_PAD, RED_PAD, YELLOW_PAD, BLUE_PAD]
 
-//Buttons
+//Buttons Constants
 const PLAY_BUTTON = document.getElementById('play')
 const RESET_BUTTON = document.getElementById('reset')
 
@@ -15,6 +14,9 @@ const LIGHT_RED = "rgb(255, 150, 150)"
 const LIGHT_GREEN = "lightgreen"
 const LIGHT_BLUE = "lightblue"
 const LIGHT_YELLOW = "lightyellow"
+
+//Time Constant
+const TIME = 500
 
 //Variables
 let game_started = false
@@ -69,6 +71,17 @@ function playClick(){
     }else if(random == 4){
         changePadColor("blue")
     }
+
+    PADS.forEach((pad,index) =>{
+        pad.addEventListener("click", ()=>{
+            if((index+1) === random){
+                alert("RIGHT!")
+            }else{
+                alert("WRONG")
+            }
+        })
+    })
+
 }
 
 function resetClick(){
@@ -116,28 +129,28 @@ function changePadColor(color){
 
         setTimeout(() =>{
             GREEN_PAD.style.backgroundColor = "green"
-        }, 1000)
+        }, TIME)
 
     }else if(color == "red"){
         RED_PAD.style.backgroundColor = LIGHT_RED
 
         setTimeout(() =>{
             RED_PAD.style.backgroundColor = "red"
-        }, 1000)
+        }, TIME)
 
     }else if(color == "yellow"){
         YELLOW_PAD.style.backgroundColor = LIGHT_YELLOW
 
         setTimeout(() =>{
             YELLOW_PAD.style.backgroundColor = "yellow"
-        }, 1000)
+        }, TIME)
 
     }else if(color == "blue"){
         BLUE_PAD.style.backgroundColor = "lightblue"
 
         setTimeout(() => {
             BLUE_PAD.style.backgroundColor = "blue"
-        }, 1000)
+        }, TIME)
     }
 
 
