@@ -13,24 +13,60 @@ function initialize(){
     playBtn.off("click");
     $("#lvl-count").html(lvlCount);
     randomizePad();
+    pads.on("click", verifyClick);
 }
 
 function randomizePad(){
     let randomNum = Math.floor(Math.random()*4);
     randomArray.push(randomNum);
-
     animatePad(randomNum);
 }
 
-function playSound(num){
-    let audio = new Audio("../audio/tone-" + num + ".wav");
-
-    audio.play();
-}
 function animatePad(randomNum) {
     pads.eq(randomNum).animate({ opacity: 0.5 }, "fast");
-    playSound(randomNum);
     setTimeout(() => {
         pads.eq(randomNum).animate({ opacity: 1 }, "fast");
     }, "300");
+}
+
+function verifyClick(){
+
+    var index = $(".pad").index(this)
+
+    clickArray.push(index);
+  
+    if(randomArray[clickArray.length-1] === index){
+        if(clickArray.length === randomArray.length){
+            setTimeout(nextLevel, 500);
+        }
+    }else{
+        wrong()
+    }
+}
+
+function nextLevel(){
+    clickArray = [];
+    lvlCount++;
+    $("#lvl-count").html(lvlCount);
+    randomizePad();
+}
+
+function wrong(){
+    var body = $("body");
+
+    body.addClass("wrong");
+
+    setTimeout(()=>{
+        body.removeClass("wrong");
+    }, 200);
+
+    lvlCount = 0;
+    $("#lvl-count").html(lvlCount);
+    clickArray = [];
+    randomArray = [];
+    pads.off("click");
+
+
+
+    playBtn.on("click", initialize);
 }
