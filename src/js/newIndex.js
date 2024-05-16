@@ -2,7 +2,7 @@
 const playBtn = $("#play");
 const pads = $(".pad");
 //Variables
-let lvlCount = 1;
+let lvlCount = 0;
 let randomArray = [];
 let clickArray = [];
 
@@ -11,9 +11,11 @@ playBtn.on("click", initialize);
 
 function initialize(){
     playBtn.off("click");
+    lvlCount++;
     $("#lvl-count").html(lvlCount);
     randomizePad();
     pads.on("click", verifyClick);
+    pads.addClass("clickable");
 }
 
 function randomizePad(){
@@ -23,10 +25,13 @@ function randomizePad(){
 }
 
 function animatePad(randomNum) {
+
     pads.eq(randomNum).animate({ opacity: 0.5 }, "fast");
     setTimeout(() => {
         pads.eq(randomNum).animate({ opacity: 1 }, "fast");
     }, "300");
+
+    
 }
 
 function verifyClick(){
