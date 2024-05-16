@@ -5,3 +5,8 @@
 .clickable{
     cursor: pointer;
 }
+
+.pressed {
+    box-shadow: 0 0 20px white;
+    background-color: grey;
+  }
