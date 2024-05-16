@@ -28,18 +28,22 @@ function animatePad(randomNum) {
 
     pads.eq(randomNum).animate({ opacity: 0.5 }, "fast");
     setTimeout(() => {
-        pads.eq(randomNum).animate({ opacity: 1 }, "fast");
+        pads.eq(randomNum).animate({ opacity: 1 }, "fast");        
     }, "300");
 
-    
 }
 
-function verifyClick(){
-
+function verifyClick(pad){
     var index = $(".pad").index(this)
+    var button = $(pad.target);
 
     clickArray.push(index);
-  
+
+    button.addClass("pressed");
+    setTimeout(()=>{
+        button.removeClass("pressed"); 
+    }, 100);
+
     if(randomArray[clickArray.length-1] === index){
         if(clickArray.length === randomArray.length){
             setTimeout(nextLevel, 500);
@@ -56,6 +60,7 @@ function nextLevel(){
     randomizePad();
 }
 
+//Wrong configs
 function wrong(){
     var body = $("body");
 
