@@ -1,0 +1,24 @@
+@media (max-width: 600px){
+
+    header{
+        font-size: 35px;
+    }
+
+    .board-container{
+        width: 200px;
+        height: 200px;
+    }
+
+    .level{
+        width: 100px;
+        height: 100px;
+        transform: translate(-50%,-25%);
+
+        font-size: 25px;
+    }
+
+    button{
+        padding: 10px 20px 10px 20px;
+    }
+
+}
